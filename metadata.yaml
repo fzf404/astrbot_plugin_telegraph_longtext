@@ -1,0 +1,11 @@
+name: astrbot_plugin_telegraph_longtext
+display_name: Telegraph 长文本
+desc: 自动将超过指定字数的 AstrBot 回复发布为 Telegraph 页面，并在聊天中发送链接。
+short_desc: 超长回复自动转为 Telegraph 链接。
+version: 1.1.0
+author: fzf404
+repo: https://github.com/fzf404/astrbot_plugin_telegraph_longtext
+license: MIT
+support_platforms:
+  - telegram
+astrbot_version: ">=4.26.7,<5"

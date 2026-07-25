@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "display_name": "Telegraph Long Text",
+    "short_desc": "Turn long replies into Telegraph links.",
+    "desc": "Automatically publish AstrBot replies over a configurable length as Telegraph pages and send the links in chat."
+  },
+  "config": {
+    "enabled": {
+      "description": "Enable automatic Telegraph publishing",
+      "hint": "When disabled, the plugin does not process replies."
+    },
+    "threshold_chars": {
+      "description": "Character threshold",
+      "hint": "Publish plain-text replies longer than this value. The minimum is 50."
+    },
+    "page_title": {
+      "description": "Telegraph page title"
+    },
+    "author_name": {
+      "description": "Telegraph author name"
+    },
+    "link_message": {
+      "description": "Link message template",
+      "hint": "Use {url} for the Telegraph links. All links are listed when content is split into multiple pages."
+    },
+    "failure_mode": {
+      "description": "On publish failure",
+      "labels": [
+        "Keep the original text",
+        "Follow AstrBot text-to-image settings"
+      ]
+    },
+    "access_token": {
+      "description": "Telegraph access token (optional)",
+      "hint": "Usually leave this empty. The plugin creates and persists an account automatically."
+    },
+    "timeout_seconds": {
+      "description": "Request timeout (seconds)"
+    },
+    "retries": {
+      "description": "Retry count"
+    }
+  }
+}

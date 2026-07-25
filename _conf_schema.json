@@ -1,0 +1,59 @@
+{
+  "enabled": {
+    "description": "启用自动转 Telegraph",
+    "type": "bool",
+    "hint": "关闭后插件不会处理任何回复。",
+    "default": true
+  },
+  "threshold_chars": {
+    "description": "自动转换字数",
+    "type": "int",
+    "hint": "纯文本长度超过此值时发布到 Telegraph，最低为 50。",
+    "default": 150
+  },
+  "page_title": {
+    "description": "Telegraph 页面标题",
+    "type": "string",
+    "default": "AstrBot 长文"
+  },
+  "author_name": {
+    "description": "Telegraph 作者名",
+    "type": "string",
+    "default": "AstrBot"
+  },
+  "link_message": {
+    "description": "链接消息模板",
+    "type": "text",
+    "hint": "使用 {url} 代表 Telegraph 链接。内容被自动分页时会在这里列出全部链接。",
+    "default": "内容较长，已发布至 Telegraph：\n{url}"
+  },
+  "failure_mode": {
+    "description": "发布失败时",
+    "type": "string",
+    "options": [
+      "keep_text",
+      "follow_t2i"
+    ],
+    "labels": [
+      "保留原始文本",
+      "继续使用 AstrBot 文转图"
+    ],
+    "default": "keep_text"
+  },
+  "access_token": {
+    "description": "Telegraph Access Token（可选）",
+    "type": "string",
+    "hint": "通常留空即可。插件会自动创建并持久化 Telegraph 账户；高级用户也可以填写已有 Token。",
+    "default": ""
+  },
+  "timeout_seconds": {
+    "description": "请求超时（秒）",
+    "type": "int",
+    "default": 20
+  },
+  "retries": {
+    "description": "失败重试次数",
+    "type": "int",
+    "default": 2
+  }
+}
