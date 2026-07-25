@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1 - 2026-07-25
+
+- Change the default automatic publishing threshold from 150 to 200 characters.
+
 ## 1.1.0 - 2026-07-25
 
 - Add independent WebUI configuration and internationalized labels.

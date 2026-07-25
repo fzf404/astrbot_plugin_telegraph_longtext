@@ -40,7 +40,7 @@ git clone https://github.com/fzf404/astrbot_plugin_telegraph_longtext
 | 配置 | 默认值 | 说明 |
 | --- | --- | --- |
 | 启用自动转 Telegraph | 开启 | 插件总开关 |
-| 自动转换字数 | `150` | 纯文本超过此长度时自动发布 |
+| 自动转换字数 | `200` | 纯文本超过此长度时自动发布 |
 | Telegraph 页面标题 | `AstrBot 长文` | 页面顶部标题 |
 | Telegraph 作者名 | `AstrBot` | 页面作者 |
 | 链接消息模板 | `内容较长...{url}` | `{url}` 会替换为页面链接 |

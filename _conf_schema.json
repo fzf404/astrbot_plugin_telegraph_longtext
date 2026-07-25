@@ -9,7 +9,7 @@
     "description": "自动转换字数",
     "type": "int",
     "hint": "纯文本长度超过此值时发布到 Telegraph，最低为 50。",
-    "default": 150
+    "default": 200
   },
   "page_title": {
     "description": "Telegraph 页面标题",
