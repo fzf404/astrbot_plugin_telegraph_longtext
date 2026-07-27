@@ -46,7 +46,7 @@ class TelegraphLongTextPlugin(Star):
             leading_plain.append(component)
 
         text = "\n\n".join(component.text for component in leading_plain).strip()
-        threshold = self._as_int("threshold_chars", 200, minimum=50)
+        threshold = self._as_int("threshold_chars", 1000, minimum=50)
         if not text or len(text) <= threshold:
             return
 
