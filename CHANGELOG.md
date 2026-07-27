@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.3 - 2026-07-27
+
+- Adjust the default automatic publishing threshold from 1000 to 800 characters.
+
 ## 1.1.2 - 2026-07-27
 
 - Raise the default automatic publishing threshold from 200 to 1000 characters.
