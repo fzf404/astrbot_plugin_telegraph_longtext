@@ -12,7 +12,8 @@
 - 自动创建并持久化 Telegraph 账户
 - 内容超过 Telegraph 单页限制时自动分页
 - 保留回复中的图片、文件等非文本组件
-- 支持常见 Markdown 块：标题、列表、引用和代码块
+- 支持 Markdown 标题、列表、引用、代码、加粗、链接、图片和表格
+- 按渲染后 JSON 大小分页，跨页保留代码和列表结构
 - 全异步网络请求，带超时和自动重试
 - 发布失败时默认保留原始文本
 
@@ -41,8 +42,10 @@ git clone https://github.com/fzf404/astrbot_plugin_telegraph_longtext
 | --- | --- | --- |
 | 启用自动转 Telegraph | 开启 | 插件总开关 |
 | 自动转换字数 | `800` | 纯文本超过此长度时自动发布 |
-| Telegraph 页面标题 | `AstrBot 长文` | 页面顶部标题 |
+| 使用模型生成标题 | 开启 | 使用当前会话模型生成短标题，每篇文章增加一次模型调用；最多发送正文前 6000 字 |
+| Telegraph 页面标题 | `AstrBot 长文` | 关闭标题生成时使用；生成失败时优先使用正文标题，再使用此固定标题 |
 | Telegraph 作者名 | `AstrBot` | 页面作者 |
+| 作者链接 | 留空 | 点击作者名时打开的链接 |
 | 链接消息模板 | `内容较长...{url}` | `{url}` 会替换为页面链接 |
 | 发布失败时 | 保留原始文本 | 也可继续使用 AstrBot 文转图 |
 | Telegraph Access Token | 留空 | 留空时会自动创建并持久化账户 |
@@ -69,11 +72,16 @@ data/plugin_data/astrbot_plugin_telegraph_longtext/account.json
 
 它不会写入插件仓库，升级插件时也不会丢失。
 
+已有 Token 无效或账户文件损坏时，插件保留原文并报告错误，不会自动创建另一个账号。请先检查 Token 或恢复原账户文件。
+
+Markdown 表格会转为逐行文本；LaTeX 不渲染为公式，不进行有损字符替换。原始 HTML 作为文本显示，代码内容保持原样。
+
 ## 开发
 
 要求 AstrBot `>=4.26.7,<5`（Python 3.12+）。
 
 ```bash
+pip install -r requirements.txt
 python -m unittest discover -s tests -v
 ruff check .
 ruff format --check .

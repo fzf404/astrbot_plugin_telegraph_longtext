@@ -13,11 +13,18 @@
       "description": "Character threshold",
       "hint": "Publish plain-text replies longer than this value. The minimum is 50."
     },
+    "auto_title": {
+      "description": "Generate a title using the chat model",
+      "hint": "Makes an extra model request. Falls back to a heading or the fixed title on failure."
+    },
     "page_title": {
       "description": "Telegraph page title"
     },
     "author_name": {
       "description": "Telegraph author name"
+    },
+    "author_url": {
+      "description": "Author profile URL"
     },
     "link_message": {
       "description": "Link message template",

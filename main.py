@@ -7,7 +7,9 @@ from astrbot.api import AstrBotConfig, logger
 from astrbot.api.event import AstrMessageEvent, filter
 from astrbot.api.star import Context, Star, StarTools
 
+from .rendering import derive_title
 from .telegraph import TelegraphClient, format_link_message
+from .title import generate_title
 
 PLUGIN_NAME = "astrbot_plugin_telegraph_longtext"
 
@@ -50,11 +52,23 @@ class TelegraphLongTextPlugin(Star):
         if not text or len(text) <= threshold:
             return
 
+        title = str(self.config.get("page_title", "AstrBot 长文"))
+        if bool(self.config.get("auto_title", True)):
+            try:
+                generated_title = await generate_title(
+                    self.context, event.unified_msg_origin, text
+                )
+            except Exception as exc:
+                logger.warning("Telegraph 标题生成失败: %s", type(exc).__name__)
+                generated_title = None
+            title = generated_title or derive_title(text, default=title)
+
         try:
             urls = await self.client.publish(
                 text,
-                title=str(self.config.get("page_title", "AstrBot 长文")),
+                title=title,
                 author_name=str(self.config.get("author_name", "AstrBot")),
+                author_url=str(self.config.get("author_url", "")),
             )
         except Exception:
             logger.error(traceback.format_exc())

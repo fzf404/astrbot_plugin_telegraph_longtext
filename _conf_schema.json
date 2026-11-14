@@ -11,6 +11,12 @@
     "hint": "纯文本长度超过此值时发布到 Telegraph，最低为 50。",
     "default": 800
   },
+  "auto_title": {
+    "description": "使用模型生成标题",
+    "type": "bool",
+    "hint": "使用当前会话模型生成标题，会产生额外模型调用。失败时使用正文标题或固定标题。",
+    "default": true
+  },
   "page_title": {
     "description": "Telegraph 页面标题",
     "type": "string",
@@ -20,6 +26,11 @@
     "description": "Telegraph 作者名",
     "type": "string",
     "default": "AstrBot"
+  },
+  "author_url": {
+    "description": "作者链接",
+    "type": "string",
+    "default": ""
   },
   "link_message": {
     "description": "链接消息模板",
