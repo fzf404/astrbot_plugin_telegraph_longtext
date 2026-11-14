@@ -1,6 +1,6 @@
 # AstrBot Telegraph Long Text
 
-![Telegraph 长文本插件图标](logo.png)
+![Telegraph 长文本插件图标](https://raw.githubusercontent.com/fzf404/astrbot_plugin_telegraph_longtext/main/logo.png)
 
 将 AstrBot 的超长回复自动发布到 [Telegraph](https://telegra.ph/)，并在聊天中发送轻量、易读的页面链接。
 
